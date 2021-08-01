@@ -4,6 +4,8 @@ import "styles/Home.css";
 import google from "styles/images/google.png";
 import chat_img from "styles/images/chat.png";
 import Chat from "./Chat";
+import jQuery from "jquery";
+import $ from "jquery";
 
 const Home = ({ userObj, isLoggedIn }) => {
   const history = useHistory();
@@ -11,6 +13,14 @@ const Home = ({ userObj, isLoggedIn }) => {
   const [time, setTime] = useState([]);
   const [query, setQuery] = useState("");
   const [isChatting, setIsChatting] = useState(false);
+  const fontArray = [
+    "'Do Hyeon', sans-serif",
+    "'East Sea Dokdo', cursive",
+    "'Nanum Brush Script', cursive",
+    "'Nanum Pen Script', cursive",
+    "'Stylish', sans-serif",
+    "'Yeon Sung', cursive",
+  ];
 
   const onChange = (event) => {
     const {
@@ -29,7 +39,7 @@ const Home = ({ userObj, isLoggedIn }) => {
 
   const countDown = () => {
     const now = new Date();
-    const dDay = new Date("Nov 18, 2021");
+    const dDay = new Date("2021-11-18 08:40:00");
     const second = (dDay - now) / 1000;
     const minute = second / 60;
     const hour = minute / 60;
@@ -69,6 +79,7 @@ const Home = ({ userObj, isLoggedIn }) => {
   };
 
   useEffect(() => {
+    document.getElementById("searchBar").focus();
     if (window.innerWidth < 400) {
       setIsChatting(true);
     }
@@ -83,6 +94,9 @@ const Home = ({ userObj, isLoggedIn }) => {
     }, 1000);
     console.log(userObj);
     setInit(true);
+    setTimeout(() => {
+      document.getElementById("searchBar").focus();
+    }, 500);
   }, []);
 
   return (
@@ -100,7 +114,9 @@ const Home = ({ userObj, isLoggedIn }) => {
         </div>
         {init ? (
           <div className="countdown">
-            <h1 className="title_time">수능까지 남은 시간</h1>
+            {/* <h1 className="title_time" id="title_time">
+              수능까지 남은 시간
+            </h1> */}
             <div className="times">
               <div className="time_div">
                 <strong className="time">{time[0]}</strong>
@@ -131,6 +147,7 @@ const Home = ({ userObj, isLoggedIn }) => {
             </a>
             <input
               className="searchbar"
+              id="searchBar"
               type="text"
               title="Search"
               placeholder="Google에서 검색하거나 URL을 입력하세요."

@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Noto+Sans+KR:wght@300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Dokdo&family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo:wght@800&family=Nanum+Pen+Script&family=Stylish&family=Yeon+Sung&display=swap");
 /*
     font-family: 'Nanum Gothic', sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Dokdo', cursive;
+    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Stylish', sans-serif;
+    font-family: 'Yeon Sung', cursive;
 */
 
 body {
@@ -57,18 +64,19 @@ body {
   width: 100%;
 }
 .title_time {
-  text-align: center;
   font-family: "Do Hyeon", sans-serif;
-  margin-top: 70px;
-  font-size: 70px;
-  text-shadow: 3px 3px white, -3px -3px white, -3px 3px white, 3px -3px white;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 100px;
+  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
   letter-spacing: 20px;
 }
 
 .times {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 120px;
+  font-family: "Do Hyeon", sans-serif;
 }
 
 .time_div {
@@ -78,18 +86,18 @@ body {
 
 .time {
   font-size: 170px;
-  text-shadow: 3px 3px white, -3px -3px white, -3px 3px white, 3px -3px white;
-  margin: 30px;
+  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
+  margin: 25px;
 }
 
 .time_des {
-  font-size: 30px;
+  font-size: 35px;
   text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
 }
 
 .bar {
   position: absolute;
-  top: 75vh;
+  top: 70vh;
   left: 30vw;
   margin: 0 auto;
   /* width: 575px; */
@@ -137,7 +145,7 @@ body {
   bottom: 20px;
   right: 20px;
   width: 350px;
-  height: 70vh;
+  height: 550px;
   background-color: white;
   border-radius: 3%;
   box-shadow: 1px 1px 8px 1px gray;
@@ -167,14 +175,14 @@ body {
 
 .chat_container {
   width: 100%;
-  height: 60vh;
+  height: 480px;
   background-color: #90e4ff;
   overflow: auto;
 }
 
 .chat_input_div {
   width: 100%;
-  height: 100%;
+  height: 40px;
   background-color: rgba(240, 240, 240, 1);
   text-align: left;
 }
@@ -184,7 +192,7 @@ body {
 }
 
 .file_label {
-  padding: 10px 15px;
+  padding: 20px 15px;
   background-color: none;
   color: black;
   cursor: pointer;
@@ -192,7 +200,7 @@ body {
 
 .chat_input {
   width: 70%;
-  height: 5.5vh;
+  height: 40px;
   border: none;
   padding-left: 10px;
   display: inline-block;
@@ -204,7 +212,7 @@ body {
 
 .chat_send_btn {
   width: 15%;
-  height: 5.5vh;
+  height: 40px;
   border: none;
   cursor: pointer;
 }
