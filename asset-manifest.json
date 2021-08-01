@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/suneungcount/static/css/main.d5d1cd40.chunk.css",
+    "main.js": "/suneungcount/static/js/main.38a6d80e.chunk.js",
+    "main.js.map": "/suneungcount/static/js/main.38a6d80e.chunk.js.map",
+    "runtime-main.js": "/suneungcount/static/js/runtime-main.c3d7be01.js",
+    "runtime-main.js.map": "/suneungcount/static/js/runtime-main.c3d7be01.js.map",
+    "static/js/2.c2ddae49.chunk.js": "/suneungcount/static/js/2.c2ddae49.chunk.js",
+    "static/js/2.c2ddae49.chunk.js.map": "/suneungcount/static/js/2.c2ddae49.chunk.js.map",
+    "index.html": "/suneungcount/index.html",
+    "static/css/main.d5d1cd40.chunk.css.map": "/suneungcount/static/css/main.d5d1cd40.chunk.css.map",
+    "static/js/2.c2ddae49.chunk.js.LICENSE.txt": "/suneungcount/static/js/2.c2ddae49.chunk.js.LICENSE.txt",
+    "static/media/google.817fc47e.png": "/suneungcount/static/media/google.817fc47e.png",
+    "static/media/rolling.fbb4e958.gif": "/suneungcount/static/media/rolling.fbb4e958.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3d7be01.js",
+    "static/js/2.c2ddae49.chunk.js",
+    "static/css/main.d5d1cd40.chunk.css",
+    "static/js/main.38a6d80e.chunk.js"
+  ]
+}
