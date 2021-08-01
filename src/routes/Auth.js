@@ -101,6 +101,7 @@ const Auth = () => {
           })
           .then(() => {
             history.push("/");
+            window.location.reload();
           })
           .catch((err) => {
             console.log(err);
@@ -109,11 +110,14 @@ const Auth = () => {
       } else {
         await authService
           .signInWithEmailAndPassword(email, password)
+          .then(() => {
+            history.push("/");
+            window.location.reload();
+          })
           .catch((err) => {
             console.log(err);
             throw err;
           });
-        history.push("/");
       }
     } catch (error) {
       console.log(error);
