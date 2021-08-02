@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/suneungcount/static/css/main.e144a1df.chunk.css",
-    "main.js": "/suneungcount/static/js/main.809934ab.chunk.js",
-    "main.js.map": "/suneungcount/static/js/main.809934ab.chunk.js.map",
+    "main.css": "/suneungcount/static/css/main.6a41459c.chunk.css",
+    "main.js": "/suneungcount/static/js/main.d4b5c332.chunk.js",
+    "main.js.map": "/suneungcount/static/js/main.d4b5c332.chunk.js.map",
     "runtime-main.js": "/suneungcount/static/js/runtime-main.c3d7be01.js",
     "runtime-main.js.map": "/suneungcount/static/js/runtime-main.c3d7be01.js.map",
     "static/js/2.ea6db499.chunk.js": "/suneungcount/static/js/2.ea6db499.chunk.js",
     "static/js/2.ea6db499.chunk.js.map": "/suneungcount/static/js/2.ea6db499.chunk.js.map",
     "index.html": "/suneungcount/index.html",
-    "static/css/main.e144a1df.chunk.css.map": "/suneungcount/static/css/main.e144a1df.chunk.css.map",
+    "static/css/main.6a41459c.chunk.css.map": "/suneungcount/static/css/main.6a41459c.chunk.css.map",
     "static/js/2.ea6db499.chunk.js.LICENSE.txt": "/suneungcount/static/js/2.ea6db499.chunk.js.LICENSE.txt",
     "static/media/google.817fc47e.png": "/suneungcount/static/media/google.817fc47e.png",
     "static/media/rolling.fbb4e958.gif": "/suneungcount/static/media/rolling.fbb4e958.gif"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.c3d7be01.js",
     "static/js/2.ea6db499.chunk.js",
-    "static/css/main.e144a1df.chunk.css",
-    "static/js/main.809934ab.chunk.js"
+    "static/css/main.6a41459c.chunk.css",
+    "static/js/main.d4b5c332.chunk.js"
   ]
 }
