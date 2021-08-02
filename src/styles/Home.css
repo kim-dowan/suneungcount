@@ -335,7 +335,7 @@ body {
     display: inline-block;
     margin-left: 25px;
     margin-top: 20px;
-    width: 350px;
+    width: 95%;
     height: 85vh;
     background-color: white;
     border-radius: 3%;
@@ -364,7 +364,20 @@ body {
     font-weight: normal;
     color: black;
   }
+  .chat_input_div {
+    background-color: white;
+  }
+  .chat_input {
+    width: 80%;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+    display: inline-block;
+  }
 
+  .chat_send_btn {
+    display: none;
+  }
   .chat_title {
     font-size: 20px;
   }

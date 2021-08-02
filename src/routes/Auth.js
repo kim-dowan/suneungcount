@@ -164,10 +164,15 @@ const Auth = () => {
 
   const onGoogleLogin = async () => {
     const provider = new firebaseInstance.auth.GoogleAuthProvider();
-    await authService.signInWithPopup(provider).catch((err) => {
-      console.log(err);
-      return;
-    });
+    await authService
+      .signInWithPopup(provider)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        return;
+      });
     history.push("/");
   };
 
