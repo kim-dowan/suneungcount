@@ -289,9 +289,32 @@ body {
   .bar {
     display: none;
   }
+  .times {
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    font-family: "Do Hyeon", sans-serif;
+  }
+  .chat_btn {
+    position: absolute;
+    bottom: 7vh;
+    right: 5vw;
+    background-color: white;
+    border-radius: 30%;
+    padding: 10px;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 640px) {
+  .container {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: "Do Hyeon", sans-serif;
+  }
   .countdown {
     top: 7vh;
     width: 100%;
@@ -306,7 +329,7 @@ body {
 
   .time_div_date {
     display: inline-block;
-    width: 90px;
+    width: 95px;
     text-align: right;
   }
 
@@ -317,7 +340,7 @@ body {
   }
 
   .time {
-    font-size: 40px;
+    font-size: 50px;
     text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
     margin: 5px;
   }
@@ -327,14 +350,44 @@ body {
     text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
   }
   .bar {
-    display: none;
+    display: inline-block;
+    position: absolute;
+    left: 9.5vw;
+    top: 15vh;
+    margin: 0 auto;
+    margin-top: 50vh;
+    width: 80%;
+    border-radius: 30px;
+    border: 1px solid #dcdcdc;
+    background-color: white;
+  }
+  .bar:hover {
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+  }
+  .bar:focus-within {
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    outline: none;
+  }
+
+  .google_img {
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: -10px;
+  }
+
+  .searchbar {
+    height: 45px;
+    width: 70%;
+    border: none;
+    font-size: 10px;
+    outline: none;
   }
 
   .chat_div {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    margin-left: 25px;
-    margin-top: 20px;
+    left: 3%;
     width: 95%;
     height: 85vh;
     background-color: white;

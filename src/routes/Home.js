@@ -70,9 +70,6 @@ const Home = ({ userObj, isLoggedIn }) => {
 
   useEffect(() => {
     document.getElementById("searchBar").focus();
-    if (window.innerWidth < 400) {
-      setIsChatting(true);
-    }
     countDown();
     document.getElementById("root").style.backgroundColor =
       "rgba(255, 255, 255, 0.2)";

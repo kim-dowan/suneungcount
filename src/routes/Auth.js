@@ -167,13 +167,13 @@ const Auth = () => {
     await authService
       .signInWithPopup(provider)
       .then(() => {
+        history.push("/");
         window.location.reload();
       })
       .catch((err) => {
         console.log(err);
         return;
       });
-    history.push("/");
   };
 
   return (
