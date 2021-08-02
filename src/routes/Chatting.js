@@ -5,6 +5,23 @@ const Chatting = ({ chatObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newChat, setNewChat] = useState(chatObj.text);
   const fileInfo = String(chatObj.fileName).split(".");
+  let isImage = true;
+  if (
+    fileInfo[fileInfo.length - 1] === "png" ||
+    fileInfo[fileInfo.length - 1] === "jpg" ||
+    fileInfo[fileInfo.length - 1] === "gif" ||
+    fileInfo[fileInfo.length - 1] === "jpeg"
+  ) {
+    isImage = true;
+  } else {
+    isImage = false;
+  }
+  let file_name = "";
+  for (let i = 0; i < fileInfo.length; i++) {
+    file_name = file_name + fileInfo[i];
+    if (i < fileInfo.length - 1) file_name = file_name + ".";
+  }
+  const chat_time = new Date(chatObj.createdAt);
   const onDeleteClick = async () => {
     const ok = window.confirm("메시지를 삭제할까요? 되돌릴 수 없습니다.");
     if (ok) {
@@ -34,21 +51,22 @@ const Chatting = ({ chatObj, isOwner }) => {
         <>
           <form onSubmit={onSubmit}>
             <input type="text" onChange={onChange} value={newChat} />
-            <input type="submit" value="Edit Chat" />
+            <input type="submit" value="수정" />
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
+          <button onClick={toggleEditing}>취소</button>
         </>
       ) : (
         <div className="chat_box">
-          <img className="chat_profile_img" src={chatObj.photoURL} />
+          <img
+            className="chat_profile_img"
+            src={chatObj.photoURL}
+            alt="profile_name"
+          />
           <h3 className="chat_profile_name">{chatObj.creatorName}</h3>
           <br />
           {chatObj.attachmentUrl && (
             <>
-              {fileInfo[1] === "png" ||
-              fileInfo[1] === "jpg" ||
-              fileInfo[1] === "gif" ||
-              fileInfo[1] === "jpeg" ? (
+              {isImage ? (
                 <img
                   className="chat_img"
                   src={chatObj.attachmentUrl}
@@ -58,25 +76,35 @@ const Chatting = ({ chatObj, isOwner }) => {
                 />
               ) : (
                 <a
+                  target="_blank"
+                  rel="noreferrer"
                   href={chatObj.attachmentUrl}
-                  download
-                >{`${fileInfo[0]}.${fileInfo[1]}`}</a>
+                  download={fileInfo[0]}
+                >
+                  {file_name}
+                </a>
               )}
             </>
           )}
           <br />
           <h4 className="chat_text">{chatObj.text}</h4>
-          {isOwner && (
-            <div className="owner_btn_div">
-              <br />
-              <button className="chat_owner_btn" onClick={onDeleteClick}>
-                삭제
-              </button>
-              <button className="chat_owner_btn" onClick={toggleEditing}>
-                수정
-              </button>
-            </div>
-          )}
+          <br />
+          <div className="owner_btn_div">
+            <br />
+            <p className="chat_time">{`${chat_time.getFullYear()}-${
+              chat_time.getMonth() + 1
+            }-${chat_time.getDate()} ${chat_time.getHours()}:${chat_time.getMinutes()}:${chat_time.getSeconds()}`}</p>
+            {isOwner && (
+              <>
+                <button className="chat_owner_btn" onClick={onDeleteClick}>
+                  삭제
+                </button>
+                <button className="chat_owner_btn" onClick={toggleEditing}>
+                  수정
+                </button>
+              </>
+            )}
+          </div>
         </div>
       )}
     </div>

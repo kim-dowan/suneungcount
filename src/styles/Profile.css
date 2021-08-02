@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Noto+Sans+KR:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dokdo&family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo:wght@800&family=Nanum+Pen+Script&family=Stylish&family=Yeon+Sung&display=swap");
+/*
+    font-family: "Do Hyeon", sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Dokdo', cursive;
+    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Stylish', sans-serif;
+    font-family: 'Yeon Sung', cursive;
+*/
+
+.profile_container {
+  font-family: "Do Hyeon", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.profile_div {
+  display: inline-block;
+  margin-top: 70px;
+}
+.profile_image {
+  width: 250px;
+  height: 250px;
+}
+.nickname {
+  font-size: 50px;
+  text-shadow: 1px 1px 8px white, -1px -1px 8px white, 1px -1px 8px white,
+    -1px 1px 8px white;
+  margin: 15px 0;
+}
+.profile_btns {
+  width: 700px;
+  text-align: center;
+}
+.profile_btn {
+  width: 150px;
+  height: 45px;
+  font-family: "Nanum Gothic", sans-serif;
+  border: none;
+  cursor: pointer;
+}
+.profile_btn:hover {
+  box-shadow: 1px 1px 8px 1px white;
+}
+#change_nickname {
+  display: none;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+}
+#change_image {
+  display: none;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+}
+.profile_form {
+  display: inline-block;
+}
+.new_nickname {
+  height: 43px;
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  vertical-align: top;
+  border: none;
+}
+.new_image {
+  text-align: center;
+  font-size: 25px;
+  display: inline-block;
+  height: 45px;
+  width: 205px;
+  background-color: white;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: top;
+}
+#new_image {
+  display: none;
+}
+
+#change_nickname_btn,
+#change_image_btn {
+  margin-bottom: 10px;
+}

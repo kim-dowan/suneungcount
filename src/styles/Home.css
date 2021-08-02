@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&family=Noto+Sans+KR:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dokdo&family=East+Sea+Dokdo&family=Nanum+Brush+Script&family=Nanum+Myeongjo:wght@800&family=Nanum+Pen+Script&family=Stylish&family=Yeon+Sung&display=swap");
 /*
+    font-family: "Do Hyeon", sans-serif;
     font-family: 'Nanum Gothic', sans-serif;
     font-family: 'Noto Sans KR', sans-serif;
     font-family: 'Dokdo', cursive;
@@ -63,14 +64,6 @@ body {
   top: 7vh;
   width: 100%;
 }
-.title_time {
-  font-family: "Do Hyeon", sans-serif;
-  text-align: center;
-  margin-top: 40px;
-  font-size: 100px;
-  text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
-  letter-spacing: 20px;
-}
 
 .times {
   width: 100%;
@@ -79,9 +72,24 @@ body {
   font-family: "Do Hyeon", sans-serif;
 }
 
-.time_div {
+.time_div_date {
   display: inline-block;
   width: 330px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.time_group {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.time_div {
+  display: inline-block;
+  width: 280px;
+  text-align: right;
+  margin-right: 20px;
 }
 
 .time {
@@ -245,11 +253,19 @@ body {
   vertical-align: top;
   font-size: 15px;
   margin: 15px;
+  margin-bottom: 0;
   padding: 0;
 }
 .chat_img {
   width: 100px;
   height: 100px;
+}
+
+.chat_time {
+  display: inline-block;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
 }
 
 .owner_btn_div {
@@ -269,9 +285,46 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 400px) {
-  .countdown {
+@media screen and (max-width: 1240px) {
+  .bar {
     display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .countdown {
+    top: 7vh;
+    width: 100%;
+  }
+
+  .times {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Do Hyeon", sans-serif;
+  }
+
+  .time_div_date {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+
+  .time_div {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+  }
+
+  .time {
+    font-size: 40px;
+    text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
+    margin: 5px;
+  }
+
+  .time_des {
+    font-size: 15px;
+    text-shadow: 1px 1px white, -1px -1px white, -1px 1px white, 1px -1px white;
   }
   .bar {
     display: none;

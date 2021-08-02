@@ -1,6 +1,5 @@
 import { dbService, storageService } from "fbase";
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Chatting from "./Chatting";
 
 const bubbleSort = function (array) {
@@ -41,13 +40,13 @@ const Chat = ({ userObj, setIsChatting, isLoggedIn }) => {
     setIsChatting((prev) => !prev);
   };
   const onSubmit = async (event) => {
-    if (chat === "" && attachment === "") return;
     event.preventDefault();
+    if (chat === "" && attachment === "") return;
     let attachmentUrl = "";
     if (attachment !== "") {
       const attachmentRef = storageService
         .ref()
-        .child(`${userObj.uid}/${uuidv4()}`);
+        .child(`${userObj.uid}/${fileName}`);
       const response = await attachmentRef.putString(attachment, "data_url");
       attachmentUrl = await response.ref.getDownloadURL();
     }
@@ -72,7 +71,6 @@ const Chat = ({ userObj, setIsChatting, isLoggedIn }) => {
     setChat(value);
   };
   const onFileChange = async (event) => {
-    console.log(event);
     const {
       target: { files },
     } = event;

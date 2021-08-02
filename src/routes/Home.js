@@ -4,8 +4,6 @@ import "styles/Home.css";
 import google from "styles/images/google.png";
 import chat_img from "styles/images/chat.png";
 import Chat from "./Chat";
-import jQuery from "jquery";
-import $ from "jquery";
 
 const Home = ({ userObj, isLoggedIn }) => {
   const history = useHistory();
@@ -13,14 +11,6 @@ const Home = ({ userObj, isLoggedIn }) => {
   const [time, setTime] = useState([]);
   const [query, setQuery] = useState("");
   const [isChatting, setIsChatting] = useState(false);
-  const fontArray = [
-    "'Do Hyeon', sans-serif",
-    "'East Sea Dokdo', cursive",
-    "'Nanum Brush Script', cursive",
-    "'Nanum Pen Script', cursive",
-    "'Stylish', sans-serif",
-    "'Yeon Sung', cursive",
-  ];
 
   const onChange = (event) => {
     const {
@@ -92,24 +82,30 @@ const Home = ({ userObj, isLoggedIn }) => {
     setInterval(() => {
       countDown();
     }, 1000);
-    console.log(userObj);
     setInit(true);
     setTimeout(() => {
       document.getElementById("searchBar").focus();
     }, 500);
+    // eslint-disable-next-line
   }, []);
 
   return (
     <>
       <div className="container">
         <div className="nav_bar">
-          <a href="https://mail.google.com/" target="_blank" className="gmail">
+          <a
+            rel="noreferrer"
+            href="https://mail.google.com/"
+            target="_blank"
+            className="gmail"
+          >
             Gmail
           </a>
           <img
             src={userObj.photoURL}
             className="profile_img"
             onClick={onLoginClick}
+            alt="profile_image"
           />
         </div>
         {init ? (
@@ -118,21 +114,25 @@ const Home = ({ userObj, isLoggedIn }) => {
               수능까지 남은 시간
             </h1> */}
             <div className="times">
-              <div className="time_div">
-                <strong className="time">{time[0]}</strong>
-                <strong className="time_des">일</strong>
+              <div className="time_group">
+                <div className="time_div_date">
+                  <strong className="time">{time[0]}</strong>
+                  <strong className="time_des">일</strong>
+                </div>
+                <div className="time_div">
+                  <strong className="time">{time[1]}</strong>
+                  <strong className="time_des">시간</strong>
+                </div>
               </div>
-              <div className="time_div">
-                <strong className="time">{time[1]}</strong>
-                <strong className="time_des">시간</strong>
-              </div>
-              <div className="time_div">
-                <strong className="time">{time[2]}</strong>
-                <strong className="time_des">분</strong>
-              </div>
-              <div className="time_div">
-                <strong className="time">{time[3]}</strong>
-                <strong className="time_des">초</strong>
+              <div className="time_group">
+                <div className="time_div">
+                  <strong className="time">{time[2]}</strong>
+                  <strong className="time_des">분</strong>
+                </div>
+                <div className="time_div">
+                  <strong className="time">{time[3]}</strong>
+                  <strong className="time_des">초</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ const Home = ({ userObj, isLoggedIn }) => {
         <form onSubmit={onSubmit}>
           <div className="bar">
             <a href="https://www.google.com">
-              <img className="google_img" src={google} />
+              <img className="google_img" src={google} alt="google_image" />
             </a>
             <input
               className="searchbar"
@@ -162,6 +162,7 @@ const Home = ({ userObj, isLoggedIn }) => {
           onClick={onChatClick}
           width="30px"
           height="30px"
+          alt="chat_image"
         />
         {isChatting ? (
           <Chat

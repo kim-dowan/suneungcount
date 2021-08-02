@@ -27,7 +27,6 @@ const App = () => {
         if (doc.exists) {
           const length = doc.data().length;
           imageName = `${String(Math.floor(Math.random() * length) + 1)}.jpg`;
-          console.log(imageName);
         }
       })
       .catch((err) => {
@@ -48,10 +47,11 @@ const App = () => {
     setInit(true);
   };
 
+  // eslint-disable-next-line
   useEffect(() => {
     authService.onAuthStateChanged(async (user) => {
       if (user) {
-        console.log(user);
+        setBackgroundImage();
         let photoURL =
           "https://firebasestorage.googleapis.com/v0/b/countdown-1281e.appspot.com/o/guest.png?alt=media&token=8bd42747-e707-442e-9854-35089a2a39e3";
 
@@ -68,11 +68,16 @@ const App = () => {
         };
         setUserObj(userObject);
         setIsLoggedIn(true);
+        setInterval(() => {
+          setBackgroundImage();
+        }, 60000);
       } else {
         setIsLoggedIn(false);
       }
     });
+    // eslint-disable-next-line
     setBackgroundImage();
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="App">
