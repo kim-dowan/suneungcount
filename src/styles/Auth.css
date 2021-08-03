@@ -98,11 +98,6 @@
   font-size: 14px;
 }
 
-.social_p {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
 .social_btn {
   display: inline-block;
   height: 30px;
@@ -131,26 +126,12 @@
   margin-right: 5px;
 }
 
-@media screen and (max-width: 768px) {
-  .social_btn {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: left;
-    margin: 10px;
-    padding: 0;
-    border: none;
-    border-radius: 100%;
-  }
-
-  .social_login {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .input_form {
     width: 80%;
+  }
+  .social_btn {
+    display: none;
   }
 }
 

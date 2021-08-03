@@ -153,6 +153,7 @@ const Home = ({ userObj, isLoggedIn }) => {
             />
           </div>
         </form>
+
         <img
           src={chat_img}
           className="chat_btn"

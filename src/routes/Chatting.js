@@ -45,6 +45,16 @@ const Chatting = ({ chatObj, isOwner }) => {
     setNewChat(value);
   };
 
+  const timeFormatter = (time) => {
+    let formatTime = "";
+    if (String(time).length < 2) {
+      formatTime = "0" + String(time);
+    } else {
+      formatTime = String(time);
+    }
+    return formatTime;
+  };
+
   return (
     <div>
       {editing ? (
@@ -91,9 +101,13 @@ const Chatting = ({ chatObj, isOwner }) => {
           <br />
           <div className="owner_btn_div">
             <br />
-            <p className="chat_time">{`${chat_time.getFullYear()}-${
+            <p className="chat_time">{`${chat_time.getFullYear()}-${timeFormatter(
               chat_time.getMonth() + 1
-            }-${chat_time.getDate()} ${chat_time.getHours()}:${chat_time.getMinutes()}:${chat_time.getSeconds()}`}</p>
+            )}-${timeFormatter(chat_time.getDate())} ${timeFormatter(
+              chat_time.getHours()
+            )}:${timeFormatter(chat_time.getMinutes())}:${timeFormatter(
+              chat_time.getSeconds()
+            )}`}</p>
             {isOwner && (
               <>
                 <button className="chat_owner_btn" onClick={onDeleteClick}>
