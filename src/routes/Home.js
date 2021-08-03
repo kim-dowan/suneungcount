@@ -137,7 +137,7 @@ const Home = ({ userObj, isLoggedIn }) => {
           ""
         )}
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} autoComplete="off">
           <div className="bar">
             <a href="https://www.google.com">
               <img className="google_img" src={google} alt="google_image" />
