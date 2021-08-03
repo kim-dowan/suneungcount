@@ -59,7 +59,7 @@ const Chatting = ({ chatObj, isOwner }) => {
     <div>
       {editing ? (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} autoComplete="off">
             <input type="text" onChange={onChange} value={newChat} />
             <input type="submit" value="수정" />
           </form>

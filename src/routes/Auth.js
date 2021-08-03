@@ -180,7 +180,7 @@ const Auth = () => {
     <>
       {init ? (
         <div className="container" id="container">
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} autoComplete="off">
             {newAccount ? (
               <div className="input_form" id="input_form">
                 <Link to="/" className="back_btn">
