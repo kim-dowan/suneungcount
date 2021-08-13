@@ -44,7 +44,6 @@ const App = () => {
       .catch((err) => {
         console.log(err);
       });
-    setInit(true);
   };
 
   // eslint-disable-next-line
@@ -68,11 +67,13 @@ const App = () => {
         };
         setUserObj(userObject);
         setIsLoggedIn(true);
+        setInit(true);
         setInterval(() => {
           setBackgroundImage();
         }, 60000);
       } else {
         setIsLoggedIn(false);
+        setInit(true);
       }
     });
     // eslint-disable-next-line
@@ -81,21 +82,7 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      {init ? (
-        <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
-      ) : (
-        <div className="loading_div">
-          <img
-            src={rolling}
-            className="loading"
-            width="50px"
-            alt="loading_gif"
-            style={{ display: "inline-block", marginTop: "40vh" }}
-          />
-          <br />
-          <p>잠시만 기다려주세요...</p>
-        </div>
-      )}
+      {init && <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />}
     </div>
   );
 };
