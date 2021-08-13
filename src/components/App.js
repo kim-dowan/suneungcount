@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import AppRouter from "./Router";
-import rolling from "styles/images/rolling.gif";
 import "styles/App.css";
 import { authService, dbService, storageService } from "fbase";
 
