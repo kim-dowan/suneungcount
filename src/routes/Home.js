@@ -11,6 +11,8 @@ const Home = ({ userObj, isLoggedIn }) => {
   const [time, setTime] = useState([]);
   const [query, setQuery] = useState("");
   const [isChatting, setIsChatting] = useState(false);
+  const [dday, setDday] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   const onChange = (event) => {
     const {
@@ -34,12 +36,20 @@ const Home = ({ userObj, isLoggedIn }) => {
     const minute = second / 60;
     const hour = minute / 60;
     const day = hour / 24;
-    setTime([
-      Math.floor(day),
-      timeFormatter(Math.floor(hour % 24)),
-      timeFormatter(Math.floor(minute % 60)),
-      timeFormatter(Math.floor(second % 60)),
-    ]);
+    if (second > 31200) {
+      setTime([
+        Math.floor(day),
+        timeFormatter(Math.floor(hour % 24)),
+        timeFormatter(Math.floor(minute % 60)),
+        timeFormatter(Math.floor(second % 60)),
+      ]);
+    } else if (second > 0) {
+      setTime(["수", "능", "대", "박!"]);
+      setDday(true);
+    } else {
+      setTime(["수", "고", "했", "어"]);
+      setFinished(true);
+    }
   };
 
   const onLoginClick = () => {
@@ -69,20 +79,17 @@ const Home = ({ userObj, isLoggedIn }) => {
   };
 
   useEffect(() => {
-    document.getElementById("searchBar").focus();
     countDown();
     document.getElementById("root").style.backgroundColor =
       "rgba(255, 255, 255, 0.2)";
     document.getElementById("root").style.opacity = "100%";
     document.getElementById("root").style.transition =
       "background-color 1s, opacity 1s";
+
     setInterval(() => {
       countDown();
     }, 1000);
     setInit(true);
-    setTimeout(() => {
-      document.getElementById("searchBar").focus();
-    }, 500);
     // eslint-disable-next-line
   }, []);
 
@@ -107,28 +114,44 @@ const Home = ({ userObj, isLoggedIn }) => {
         </div>
         {init ? (
           <div className="countdown">
-            {/* <h1 className="title_time" id="title_time">
-              수능까지 남은 시간
-            </h1> */}
-            <div className="times">
+            <h1 className="title_time" id="title_time">
+              1교시 시작까지 남은 시간
+            </h1>
+            <div id="times" className="times">
               <div className="time_group">
                 <div className="time_div_date">
                   <strong className="time">{time[0]}</strong>
-                  <strong className="time_des">일</strong>
+                  {!(dday || finished) ? (
+                    <strong className="time_des">일</strong>
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 <div className="time_div">
                   <strong className="time">{time[1]}</strong>
-                  <strong className="time_des">시간</strong>
+                  {!(dday || finished) ? (
+                    <strong className="time_des">시간</strong>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
               <div className="time_group">
                 <div className="time_div">
                   <strong className="time">{time[2]}</strong>
-                  <strong className="time_des">분</strong>
+                  {!(dday || finished) ? (
+                    <strong className="time_des">분</strong>
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 <div className="time_div">
                   <strong className="time">{time[3]}</strong>
-                  <strong className="time_des">초</strong>
+                  {!(dday || finished) ? (
+                    <strong className="time_des">초</strong>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>
