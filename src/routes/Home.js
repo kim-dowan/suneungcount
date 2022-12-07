@@ -31,7 +31,7 @@ const Home = ({ userObj, isLoggedIn }) => {
 
   const countDown = () => {
     const now = new Date();
-    const dDay = new Date("2021-11-18 08:40:00");
+    const dDay = new Date("2023-11-16 08:40:00");
     const second = (dDay - now) / 1000;
     const minute = second / 60;
     const hour = minute / 60;
